@@ -17,7 +17,13 @@ module.exports = {
         assetModuleFilename: 'assets/images/[hash][ext][query]'
     },
     resolve: {
-        extensions: ['.js'] // LOS ARCHIVOS QUE WEBPACK VA A LEER
+        extensions: ['.js'], // LOS ARCHIVOS QUE WEBPACK VA A LEER
+        alias: {
+            '@utils': path.resolve(__dirname, 'src/utils/'),
+            '@templates': path.resolve(__dirname, 'src/templates/'),
+            '@styles': path.resolve(__dirname, 'src/styles/'),
+            '@images': path.resolve(__dirname, 'src/assets/images/'),
+        }
     },
     module: {
         // REGLAS PARA TRABAJAR CON WEBPACK
@@ -55,7 +61,7 @@ module.exports = {
                             // ubuntu-regularhola.woff
                         outputPath: "./assets/fonts/",
                         // EL DIRECTORIO DE SALIDA (SIN COMPLICACIONES)
-                        publicPath: "./assets/fonts/",
+                        publicPath: "../assets/fonts/",
                         // EL DIRECTORIO PUBLICO (SIN COMPLICACIONES)
                         esModule: false,
                         // AVISAR EXPLICITAMENTE SI ES UN MODULO
